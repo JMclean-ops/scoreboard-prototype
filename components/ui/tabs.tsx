@@ -1,8 +1,14 @@
 
+
 import * as React from "react";
 
-export function Tabs({ children }: { children: React.ReactNode }) {
-  return <div>{children}</div>;
+interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
+  defaultValue?: string;
+  children: React.ReactNode;
+}
+
+export function Tabs({ defaultValue, children, ...props }: TabsProps) {
+  return <div {...props}>{children}</div>;
 }
 
 export function TabsList({ children }: { children: React.ReactNode }) {
